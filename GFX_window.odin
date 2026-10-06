@@ -95,4 +95,3 @@ set_window_should_close :: proc(should_close: bool = true) {
 		glfw.SetWindowShouldClose(global_renderer.window, b32(should_close))
 	}
 }
-
