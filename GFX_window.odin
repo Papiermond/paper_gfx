@@ -13,8 +13,8 @@ init_window :: proc(width, height: i32, title: string) -> bool {
 		return false
 	}
 
-	glfw.WindowHint(glfw.CONTEXT_VERSION_MAJOR, 3)
-	glfw.WindowHint(glfw.CONTEXT_VERSION_MINOR, 3)
+	glfw.WindowHint(glfw.CONTEXT_VERSION_MAJOR, 4)
+	glfw.WindowHint(glfw.CONTEXT_VERSION_MINOR, 6)
 	glfw.WindowHint(glfw.OPENGL_PROFILE, glfw.OPENGL_CORE_PROFILE)
 	glfw.WindowHint(glfw.RESIZABLE, false)
 
@@ -32,7 +32,7 @@ init_window :: proc(width, height: i32, title: string) -> bool {
 
 	input.init_input(window)
 
-	gl.load_up_to(3, 3, glfw.gl_set_proc_address)
+	gl.load_up_to(4, 6, glfw.gl_set_proc_address)
 	init_renderer(width, height)
 	global_renderer.last_time = glfw.GetTime()
 	return true
@@ -95,3 +95,4 @@ set_window_should_close :: proc(should_close: bool = true) {
 		glfw.SetWindowShouldClose(global_renderer.window, b32(should_close))
 	}
 }
+
